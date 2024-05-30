@@ -1,0 +1,29 @@
+# webapp and db settings
+spring:
+  application:
+    name: ${webapp.name:webapp}
+
+# tomcat settings
+server:
+  servlet:
+    context-path: ${webapp.context-path:/webapp}
+
+# spring ai settings
+spring.ai:
+  ollama:
+    base-url: ${webapp.ai.url:http://localhost:11434}
+    chat:
+      options:
+        model: ${webapp.ai.model:mistral}
+#        model: ${webapp.ai.model:llama3}
+#        model: ${webapp.ai.model:phi3:mini}
+        temperature: 0.7
+    embedding:
+      options:
+        model: ${webapp.ai.model:nomic-embed-text}
+#        model: ${webapp.ai.model:nomic-embed-text}
+
+# logging settings
+logging:
+  level:
+    sql: debug

@@ -1,0 +1,7 @@
+logging:
+  level:
+    web: debug
+    '[org.springframework.security]': debug
+    '[io.github.meritepk.webapp]': debug
+    org.apache.http.wire: debug
+    org.springframework.ai: debug
